@@ -17,7 +17,7 @@ class CitiesAQIViewModel {
     var delegate : CitiesAQIViewModelDelegate?
     
     func requestForData() {
-        WebSocket.shared.connect()
+        WebSocket.shared.connection(urlString: "ws://city-ws.herokuapp.com/")
         WebSocket.shared.delegate = self
     }
     

@@ -18,27 +18,27 @@ class WebSocket: NSObject {
     
     public weak var delegate: WebSocketDelegate?
     private var isConnected = false
-    private var urlString: String!
+    private var urlString: String?
+    private var webSocket: URLSessionWebSocketTask?
     
-    private lazy var webSocket: URLSessionWebSocketTask = {
-        let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-        return session.webSocketTask(with: URL(string: urlString)!)
-    }()
-    
-    static let shared = WebSocket(urlString: "ws://city-ws.herokuapp.com/")
+    static let shared = WebSocket()
 
-    private init(urlString: String) {
-        super.init()
+    private override init() {}
+    
+    public func connection(urlString: String) {
         self.urlString = urlString
+        connect()
     }
     
     public func connect() {
-        guard isConnected == false else {return}
-        webSocket.resume()
+        guard isConnected == false, let url = self.urlString else {return}
+        let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+        webSocket = session.webSocketTask(with: URL(string: url)!)
+        webSocket?.resume()
     }
     
     public func disConnect() {
-        webSocket.cancel(with: .goingAway, reason: "app closed".data(using: .utf8))
+        webSocket?.cancel(with: .goingAway, reason: "app closed".data(using: .utf8))
         isConnected = false
     }
 }
@@ -58,7 +58,7 @@ extension WebSocket: URLSessionWebSocketDelegate {
 
 extension WebSocket {
     private func ping() {
-        webSocket.sendPing { error in
+        webSocket?.sendPing { error in
             if let error = error {
                 self.failed(withError: error.localizedDescription)
             }
@@ -66,7 +66,7 @@ extension WebSocket {
     }
     
     private func receive() {
-        webSocket.receive { [unowned self] result in
+        webSocket?.receive { [unowned self] result in
             switch result {
             case .success(let message):
                 switch message {
@@ -82,6 +82,7 @@ extension WebSocket {
                 self.failed(withError: error.localizedDescription)
                 break
             }
+            guard isConnected else {return}
             self.receive()
         }
     }
