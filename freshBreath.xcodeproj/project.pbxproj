@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1B237827B82AAD008AB4B7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1B237727B82AAD008AB4B7 /* UIColor+Extension.swift */; };
 		BFBC1A6727B7876A00315ECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A6627B7876A00315ECC /* AppDelegate.swift */; };
 		BFBC1A6927B7876A00315ECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */; };
 		BFBC1A6E27B7876A00315ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A6C27B7876A00315ECC /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF1B237727B82AAD008AB4B7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BFBC1A6327B7876A00315ECC /* freshBreath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freshBreath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBC1A6627B7876A00315ECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				BFBC1A6F27B7876B00315ECC /* Assets.xcassets */,
 				BFBC1A7127B7876B00315ECC /* LaunchScreen.storyboard */,
 				BFBC1A7427B7876B00315ECC /* Info.plist */,
+				BF1B237727B82AAD008AB4B7 /* UIColor+Extension.swift */,
 			);
 			path = freshBreath;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				BFBC1A7F27B7BA9A00315ECC /* CitiesAQIController.swift in Sources */,
 				BFBC1A8327B7BC1200315ECC /* CityAQICell.swift in Sources */,
 				BFBC1A7B27B7A4EC00315ECC /* WebSocket.swift in Sources */,
+				BF1B237827B82AAD008AB4B7 /* UIColor+Extension.swift in Sources */,
 				BFBC1A6727B7876A00315ECC /* AppDelegate.swift in Sources */,
 				BFBC1A8D27B7C9BD00315ECC /* CityModel.swift in Sources */,
 				BFBC1A6927B7876A00315ECC /* SceneDelegate.swift in Sources */,

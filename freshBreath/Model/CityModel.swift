@@ -27,10 +27,12 @@ struct AQICityRecord
     var aqi : Double
     var aqiString: String
     var time : Date
+    var status : AQIStatus
     
     init(_ model: AQIModel) {
         self.aqi = model.aqi
         self.aqiString = String(format: "%.2f", model.aqi)
         self.time = Date()
+        self.status = AQIStatus.status(forAQI: model.aqi)
     }
 }
