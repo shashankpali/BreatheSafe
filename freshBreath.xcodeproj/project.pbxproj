@@ -13,6 +13,7 @@
 		BFBC1A6E27B7876A00315ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A6C27B7876A00315ECC /* Main.storyboard */; };
 		BFBC1A7027B7876B00315ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A6F27B7876B00315ECC /* Assets.xcassets */; };
 		BFBC1A7327B7876B00315ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A7127B7876B00315ECC /* LaunchScreen.storyboard */; };
+		BFBC1A7B27B7A4EC00315ECC /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A7A27B7A4EC00315ECC /* WebSocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BFBC1A6F27B7876B00315ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBC1A7227B7876B00315ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFBC1A7427B7876B00315ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFBC1A7A27B7A4EC00315ECC /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,21 @@
 				BFBC1A6627B7876A00315ECC /* AppDelegate.swift */,
 				BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */,
 				BFBC1A6A27B7876A00315ECC /* ViewController.swift */,
+				BFBC1A7C27B7B6C900315ECC /* Socket */,
 				BFBC1A6C27B7876A00315ECC /* Main.storyboard */,
 				BFBC1A6F27B7876B00315ECC /* Assets.xcassets */,
 				BFBC1A7127B7876B00315ECC /* LaunchScreen.storyboard */,
 				BFBC1A7427B7876B00315ECC /* Info.plist */,
 			);
 			path = freshBreath;
+			sourceTree = "<group>";
+		};
+		BFBC1A7C27B7B6C900315ECC /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC1A7A27B7A4EC00315ECC /* WebSocket.swift */,
+			);
+			path = Socket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBC1A6B27B7876A00315ECC /* ViewController.swift in Sources */,
+				BFBC1A7B27B7A4EC00315ECC /* WebSocket.swift in Sources */,
 				BFBC1A6727B7876A00315ECC /* AppDelegate.swift in Sources */,
 				BFBC1A6927B7876A00315ECC /* SceneDelegate.swift in Sources */,
 			);
