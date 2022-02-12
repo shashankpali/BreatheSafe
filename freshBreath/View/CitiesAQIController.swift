@@ -32,6 +32,7 @@ class CitiesAQIController: UITableViewController {
     func setupTable() {
         tableView.register(UINib(nibName: "CityAQICell", bundle: nil), forCellReuseIdentifier: "CityAQICell")
         tableView.rowHeight = 148
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
 
     // MARK: - Table view data source
