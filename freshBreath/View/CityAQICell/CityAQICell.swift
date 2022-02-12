@@ -9,6 +9,16 @@ import UIKit
 
 class CityAQICell: UITableViewCell {
 
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var updatedTimeLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var indexBackView: UIView!
+    @IBOutlet weak var statusBackView: UIView!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +28,13 @@ class CityAQICell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func prepare(forModel: CityModel) {
+        cityNameLabel.text = forModel.name
+        guard let record = forModel.records.last else {return}
+        updatedTimeLabel.text = record.time.description
+        indexLabel.text = record.aqiString
     }
     
 }
