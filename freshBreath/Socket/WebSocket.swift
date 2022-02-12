@@ -38,7 +38,7 @@ class WebSocket: NSObject {
     }
     
     public func disConnect() {
-        webSocket?.cancel(with: .goingAway, reason: "app closed".data(using: .utf8))
+        webSocket?.cancel(with: .goingAway, reason: "app closed or sent to background".data(using: .utf8))
         isConnected = false
     }
 }

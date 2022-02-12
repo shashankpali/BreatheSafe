@@ -20,9 +20,18 @@ class CitiesAQIController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.register(UINib(nibName: "CityAQICell", bundle: nil), forCellReuseIdentifier: "CityAQICell")
+        setupTable()
+        setupModel()
+    }
+    
+    func setupModel() {
         viewModel.delegate = self
         viewModel.requestForData()
+    }
+    
+    func setupTable() {
+        tableView.register(UINib(nibName: "CityAQICell", bundle: nil), forCellReuseIdentifier: "CityAQICell")
+        tableView.rowHeight = 148
     }
 
     // MARK: - Table view data source
@@ -41,8 +50,7 @@ class CitiesAQIController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityAQICell", for: indexPath) as! CityAQICell
-        let cityMod = dataSource[indexPath.row]
-        cell.textLabel?.text = cityMod.name + " => " + (cityMod.records.last?.aqiString ?? "")
+        cell.prepare(forModel: dataSource[indexPath.row])
 
         return cell
     }
