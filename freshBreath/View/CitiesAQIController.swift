@@ -8,6 +8,8 @@
 import UIKit
 
 class CitiesAQIController: UITableViewController {
+    
+    let viewModel = CitiesAQIViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class CitiesAQIController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.register(UINib(nibName: "CityAQICell", bundle: nil), forCellReuseIdentifier: "CityAQICell")
+        
+        viewModel.requestForData()
     }
 
     // MARK: - Table view data source

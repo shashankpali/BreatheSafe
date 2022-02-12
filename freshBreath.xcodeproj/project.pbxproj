@@ -17,6 +17,7 @@
 		BFBC1A8327B7BC1200315ECC /* CityAQICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A8127B7BC1200315ECC /* CityAQICell.swift */; };
 		BFBC1A8427B7BC1200315ECC /* CityAQICell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A8227B7BC1200315ECC /* CityAQICell.xib */; };
 		BFBC1A8727B7C1C700315ECC /* AQIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A8627B7C1C700315ECC /* AQIModel.swift */; };
+		BFBC1A8A27B7C91600315ECC /* CitiesAQIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A8927B7C91600315ECC /* CitiesAQIViewModel.swift */; };
 		BFBC1A8D27B7C9BD00315ECC /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A8C27B7C9BD00315ECC /* CityModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		BFBC1A8127B7BC1200315ECC /* CityAQICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAQICell.swift; sourceTree = "<group>"; };
 		BFBC1A8227B7BC1200315ECC /* CityAQICell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityAQICell.xib; sourceTree = "<group>"; };
 		BFBC1A8627B7C1C700315ECC /* AQIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIModel.swift; sourceTree = "<group>"; };
+		BFBC1A8927B7C91600315ECC /* CitiesAQIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesAQIViewModel.swift; sourceTree = "<group>"; };
 		BFBC1A8C27B7C9BD00315ECC /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			children = (
 				BFBC1A7E27B7BA9A00315ECC /* CitiesAQIController.swift */,
 				BFBC1A8527B7BC2500315ECC /* CityAQICell */,
+				BFBC1A8B27B7C92000315ECC /* ViewModel */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +123,14 @@
 				BFBC1A8C27B7C9BD00315ECC /* CityModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BFBC1A8B27B7C92000315ECC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC1A8927B7C91600315ECC /* CitiesAQIViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				BFBC1A8D27B7C9BD00315ECC /* CityModel.swift in Sources */,
 				BFBC1A6927B7876A00315ECC /* SceneDelegate.swift in Sources */,
 				BFBC1A8727B7C1C700315ECC /* AQIModel.swift in Sources */,
+				BFBC1A8A27B7C91600315ECC /* CitiesAQIViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
