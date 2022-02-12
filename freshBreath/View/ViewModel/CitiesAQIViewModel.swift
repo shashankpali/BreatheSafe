@@ -7,9 +7,14 @@
 
 import Foundation
 
+protocol CitiesAQIViewModelDelegate {
+    func didUpdated(citiesAQI: [CityModel])
+}
+
 class CitiesAQIViewModel {
     
     var citiesAQI = [CityModel]()
+    var delegate : CitiesAQIViewModelDelegate?
     
     func requestForData() {
         WebSocket.shared.connect()
@@ -23,7 +28,7 @@ extension CitiesAQIViewModel: WebSocketDelegate {
         guard let data = response.data(using: .utf8) else { return }
         do {
             let responseArray = try JSONDecoder().decode([AQIModel].self, from: data)
-            prepareCityModel(responseArray)
+            prepareCitiesAQI(responseArray)
         } catch {
             print(error)
         }
@@ -32,7 +37,7 @@ extension CitiesAQIViewModel: WebSocketDelegate {
 
 extension CitiesAQIViewModel {
     
-    private func prepareCityModel(_ res: [AQIModel]) {
+    private func prepareCitiesAQI(_ res: [AQIModel]) {
         
         for model in res {
             let record = AQICityRecord(model)
@@ -45,6 +50,6 @@ extension CitiesAQIViewModel {
             }
         }
         
-        print(citiesAQI)
+        delegate?.didUpdated(citiesAQI: Array(citiesAQI.sorted{$0.name < $1.name}))
     }
 }

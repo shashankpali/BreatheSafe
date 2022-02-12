@@ -10,6 +10,7 @@ import UIKit
 class CitiesAQIController: UITableViewController {
     
     let viewModel = CitiesAQIViewModel()
+    var dataSource = [CityModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class CitiesAQIController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.register(UINib(nibName: "CityAQICell", bundle: nil), forCellReuseIdentifier: "CityAQICell")
-        
+        viewModel.delegate = self
         viewModel.requestForData()
     }
 
@@ -33,14 +34,15 @@ class CitiesAQIController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return dataSource.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityAQICell", for: indexPath)
-
-        // Configure the cell...
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityAQICell", for: indexPath) as! CityAQICell
+        let cityMod = dataSource[indexPath.row]
+        cell.textLabel?.text = cityMod.name + " => " + (cityMod.records.last?.aqiString ?? "")
 
         return cell
     }
@@ -91,4 +93,13 @@ class CitiesAQIController: UITableViewController {
     }
     */
 
+}
+
+extension CitiesAQIController: CitiesAQIViewModelDelegate {
+    func didUpdated(citiesAQI: [CityModel]) {
+        dataSource = citiesAQI
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
