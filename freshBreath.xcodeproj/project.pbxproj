@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		BFBC1A6727B7876A00315ECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A6627B7876A00315ECC /* AppDelegate.swift */; };
 		BFBC1A6927B7876A00315ECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */; };
-		BFBC1A6B27B7876A00315ECC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A6A27B7876A00315ECC /* ViewController.swift */; };
 		BFBC1A6E27B7876A00315ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A6C27B7876A00315ECC /* Main.storyboard */; };
 		BFBC1A7027B7876B00315ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A6F27B7876B00315ECC /* Assets.xcassets */; };
 		BFBC1A7327B7876B00315ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A7127B7876B00315ECC /* LaunchScreen.storyboard */; };
 		BFBC1A7B27B7A4EC00315ECC /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A7A27B7A4EC00315ECC /* WebSocket.swift */; };
+		BFBC1A7F27B7BA9A00315ECC /* CitiesAQIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A7E27B7BA9A00315ECC /* CitiesAQIController.swift */; };
+		BFBC1A8327B7BC1200315ECC /* CityAQICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A8127B7BC1200315ECC /* CityAQICell.swift */; };
+		BFBC1A8427B7BC1200315ECC /* CityAQICell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A8227B7BC1200315ECC /* CityAQICell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BFBC1A6327B7876A00315ECC /* freshBreath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freshBreath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBC1A6627B7876A00315ECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BFBC1A6A27B7876A00315ECC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFBC1A6D27B7876A00315ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBC1A6F27B7876B00315ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBC1A7227B7876B00315ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFBC1A7427B7876B00315ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFBC1A7A27B7A4EC00315ECC /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		BFBC1A7E27B7BA9A00315ECC /* CitiesAQIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesAQIController.swift; sourceTree = "<group>"; };
+		BFBC1A8127B7BC1200315ECC /* CityAQICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAQICell.swift; sourceTree = "<group>"; };
+		BFBC1A8227B7BC1200315ECC /* CityAQICell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityAQICell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +62,9 @@
 		BFBC1A6527B7876A00315ECC /* freshBreath */ = {
 			isa = PBXGroup;
 			children = (
-				BFBC1A6627B7876A00315ECC /* AppDelegate.swift */,
-				BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */,
-				BFBC1A6A27B7876A00315ECC /* ViewController.swift */,
+				BFBC1A7D27B7B8F500315ECC /* Defaults */,
 				BFBC1A7C27B7B6C900315ECC /* Socket */,
+				BFBC1A8027B7BBAB00315ECC /* View */,
 				BFBC1A6C27B7876A00315ECC /* Main.storyboard */,
 				BFBC1A6F27B7876B00315ECC /* Assets.xcassets */,
 				BFBC1A7127B7876B00315ECC /* LaunchScreen.storyboard */,
@@ -76,6 +79,33 @@
 				BFBC1A7A27B7A4EC00315ECC /* WebSocket.swift */,
 			);
 			path = Socket;
+			sourceTree = "<group>";
+		};
+		BFBC1A7D27B7B8F500315ECC /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC1A6627B7876A00315ECC /* AppDelegate.swift */,
+				BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */,
+			);
+			path = Defaults;
+			sourceTree = "<group>";
+		};
+		BFBC1A8027B7BBAB00315ECC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC1A7E27B7BA9A00315ECC /* CitiesAQIController.swift */,
+				BFBC1A8527B7BC2500315ECC /* CityAQICell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFBC1A8527B7BC2500315ECC /* CityAQICell */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC1A8127B7BC1200315ECC /* CityAQICell.swift */,
+				BFBC1A8227B7BC1200315ECC /* CityAQICell.xib */,
+			);
+			path = CityAQICell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBC1A8427B7BC1200315ECC /* CityAQICell.xib in Resources */,
 				BFBC1A7327B7876B00315ECC /* LaunchScreen.storyboard in Resources */,
 				BFBC1A7027B7876B00315ECC /* Assets.xcassets in Resources */,
 				BFBC1A6E27B7876A00315ECC /* Main.storyboard in Resources */,
@@ -149,7 +180,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBC1A6B27B7876A00315ECC /* ViewController.swift in Sources */,
+				BFBC1A7F27B7BA9A00315ECC /* CitiesAQIController.swift in Sources */,
+				BFBC1A8327B7BC1200315ECC /* CityAQICell.swift in Sources */,
 				BFBC1A7B27B7A4EC00315ECC /* WebSocket.swift in Sources */,
 				BFBC1A6727B7876A00315ECC /* AppDelegate.swift in Sources */,
 				BFBC1A6927B7876A00315ECC /* SceneDelegate.swift in Sources */,
