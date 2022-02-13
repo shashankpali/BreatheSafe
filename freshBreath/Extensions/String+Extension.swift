@@ -41,4 +41,13 @@ extension String {
             return "just now"
         }
     }
+    
+    static func asMinAndSec(_ date: Date) -> String {
+        let formatter = DateFormatter()
+            formatter.timeStyle = .medium
+            formatter.dateFormat = "HH:mm"
+        
+        let dateString = formatter.string(from: date)
+        return dateString
+    }
 }

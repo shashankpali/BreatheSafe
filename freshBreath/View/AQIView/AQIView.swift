@@ -9,7 +9,6 @@ import UIKit
 
 final class AQIView: UIView {
     
-    let nibName = "AQIView"
     var contentView: UIView?
     
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -36,7 +35,7 @@ final class AQIView: UIView {
     
     private func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
+        let nib = UINib(nibName: "AQIView", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
