@@ -22,6 +22,8 @@
 		BF84AAB427B912B000EFBA16 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AAA927B912B000EFBA16 /* DataEntry.swift */; };
 		BF84AAB927B9577F00EFBA16 /* DetailCityAQIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AAB727B9577F00EFBA16 /* DetailCityAQIController.swift */; };
 		BF84AABA27B9577F00EFBA16 /* DetailCityAQIController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF84AAB827B9577F00EFBA16 /* DetailCityAQIController.xib */; };
+		BF84AABE27B96EE100EFBA16 /* AQIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF84AABD27B96EE100EFBA16 /* AQIView.xib */; };
+		BF84AAC027B96EFD00EFBA16 /* AQIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AABF27B96EFD00EFBA16 /* AQIView.swift */; };
 		BFBC1A6727B7876A00315ECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A6627B7876A00315ECC /* AppDelegate.swift */; };
 		BFBC1A6927B7876A00315ECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */; };
 		BFBC1A6E27B7876A00315ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBC1A6C27B7876A00315ECC /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		BF84AAA927B912B000EFBA16 /* DataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		BF84AAB727B9577F00EFBA16 /* DetailCityAQIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCityAQIController.swift; sourceTree = "<group>"; };
 		BF84AAB827B9577F00EFBA16 /* DetailCityAQIController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCityAQIController.xib; sourceTree = "<group>"; };
+		BF84AABD27B96EE100EFBA16 /* AQIView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AQIView.xib; sourceTree = "<group>"; };
+		BF84AABF27B96EFD00EFBA16 /* AQIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIView.swift; sourceTree = "<group>"; };
 		BFBC1A6327B7876A00315ECC /* freshBreath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freshBreath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBC1A6627B7876A00315ECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBC1A6827B7876A00315ECC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,15 @@
 			path = CityDetails;
 			sourceTree = "<group>";
 		};
+		BF84AAC127B9819400EFBA16 /* AQIView */ = {
+			isa = PBXGroup;
+			children = (
+				BF84AABF27B96EFD00EFBA16 /* AQIView.swift */,
+				BF84AABD27B96EE100EFBA16 /* AQIView.xib */,
+			);
+			path = AQIView;
+			sourceTree = "<group>";
+		};
 		BFBC1A5A27B7876A00315ECC = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +223,7 @@
 		BFBC1A8027B7BBAB00315ECC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF84AAC127B9819400EFBA16 /* AQIView */,
 				BF84AABB27B9664E00EFBA16 /* CitiesList */,
 				BF84AABC27B9666200EFBA16 /* CityDetails */,
 			);
@@ -302,6 +316,7 @@
 			files = (
 				BFBC1A8427B7BC1200315ECC /* CityAQICell.xib in Resources */,
 				BFBC1A7327B7876B00315ECC /* LaunchScreen.storyboard in Resources */,
+				BF84AABE27B96EE100EFBA16 /* AQIView.xib in Resources */,
 				BFBC1A7027B7876B00315ECC /* Assets.xcassets in Resources */,
 				BFBC1A6E27B7876A00315ECC /* Main.storyboard in Resources */,
 				BF84AABA27B9577F00EFBA16 /* DetailCityAQIController.xib in Resources */,
@@ -315,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF84AAC027B96EFD00EFBA16 /* AQIView.swift in Sources */,
 				BFBC1A7F27B7BA9A00315ECC /* CitiesAQIController.swift in Sources */,
 				BFBC1A8327B7BC1200315ECC /* CityAQICell.swift in Sources */,
 				BF84AAAC27B912B000EFBA16 /* BeautifulBarChartPresenter.swift in Sources */,
