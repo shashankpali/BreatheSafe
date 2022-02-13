@@ -33,9 +33,9 @@ class CityAQICell: UITableViewCell {
     func prepare(forModel: CityModel) {
         cityNameLabel.text = forModel.name
         guard let record = forModel.records.last else {return}
-        updatedTimeLabel.text = record.time.description
         indexLabel.text = record.aqiString
         statusLabel.text = String.forStatus(record.status)
+        updatedTimeLabel.text = "Updated " + String.forTime(record.time)
         
         let color = UIColor.forStatus(record.status)
         statusBackView.backgroundColor = color
