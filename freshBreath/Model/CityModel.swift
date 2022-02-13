@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CityModel
+final class CityModel
 {
     var name : String
     var records : [AQICityRecord]

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CitiesAQIController: UITableViewController {
+final class CitiesAQIController: UITableViewController {
     
     let viewModel = CitiesAQIViewModel()
     var dataSource = [CityModel]()
@@ -31,7 +31,7 @@ class CitiesAQIController: UITableViewController {
     
     func setupTable() {
         tableView.register(UINib(nibName: "CityAQICell", bundle: nil), forCellReuseIdentifier: "CityAQICell")
-        tableView.rowHeight = 148
+        tableView.rowHeight = 156
         tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
 

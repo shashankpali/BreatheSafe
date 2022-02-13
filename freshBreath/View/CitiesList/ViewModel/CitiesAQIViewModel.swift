@@ -11,7 +11,7 @@ protocol CitiesAQIViewModelDelegate {
     func didUpdated(citiesAQI: [CityModel])
 }
 
-class CitiesAQIViewModel {
+final class CitiesAQIViewModel {
     
     var citiesAQI = [CityModel]()
     var delegate : CitiesAQIViewModelDelegate?

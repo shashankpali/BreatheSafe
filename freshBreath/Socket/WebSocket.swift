@@ -14,7 +14,7 @@ import Foundation
     @objc optional func didFailed(withError: String)
 }
 
-class WebSocket: NSObject {
+final class WebSocket: NSObject {
     
     public weak var delegate: WebSocketDelegate?
     private var isConnected = false
