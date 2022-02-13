@@ -7,8 +7,9 @@
 
 import UIKit
 
-class DetailCityAQIController: UIViewController {
+final class DetailCityAQIController: UIViewController {
 
+    @IBOutlet weak var cityView: AQIView!
     @IBOutlet weak var chartView: BasicBarChart!
     //
     var cityModel: CityModel?
@@ -17,6 +18,8 @@ class DetailCityAQIController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        guard let model = cityModel else {return}
+        cityView.prepare(forModel: model)
         
         timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) {[unowned self] (timer) in
             guard let records = cityModel?.records else {return}
