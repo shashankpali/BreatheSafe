@@ -45,7 +45,7 @@ extension String {
     static func asMinAndSec(_ date: Date) -> String {
         let formatter = DateFormatter()
             formatter.timeStyle = .medium
-            formatter.dateFormat = "hh:mm a"
+            formatter.dateFormat = "HH:mm:ss"
         
         let dateString = formatter.string(from: date)
         return dateString
