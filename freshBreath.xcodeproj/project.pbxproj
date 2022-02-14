@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		BF1B237827B82AAD008AB4B7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1B237727B82AAD008AB4B7 /* UIColor+Extension.swift */; };
 		BF1B237A27B83690008AB4B7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1B237927B83690008AB4B7 /* String+Extension.swift */; };
-		BF84AAAA27B912B000EFBA16 /* BeautifulBarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AA9D27B912B000EFBA16 /* BeautifulBarEntry.swift */; };
-		BF84AAAB27B912B000EFBA16 /* BeautifulBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AA9E27B912B000EFBA16 /* BeautifulBarChart.swift */; };
-		BF84AAAC27B912B000EFBA16 /* BeautifulBarChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AA9F27B912B000EFBA16 /* BeautifulBarChartPresenter.swift */; };
 		BF84AAAD27B912B000EFBA16 /* BasicBarChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AAA127B912B000EFBA16 /* BasicBarChartPresenter.swift */; };
 		BF84AAAE27B912B000EFBA16 /* BasicBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AAA227B912B000EFBA16 /* BasicBarChart.swift */; };
 		BF84AAAF27B912B000EFBA16 /* BasicBarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF84AAA327B912B000EFBA16 /* BasicBarEntry.swift */; };
@@ -42,9 +39,6 @@
 /* Begin PBXFileReference section */
 		BF1B237727B82AAD008AB4B7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BF1B237927B83690008AB4B7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		BF84AA9D27B912B000EFBA16 /* BeautifulBarEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeautifulBarEntry.swift; sourceTree = "<group>"; };
-		BF84AA9E27B912B000EFBA16 /* BeautifulBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeautifulBarChart.swift; sourceTree = "<group>"; };
-		BF84AA9F27B912B000EFBA16 /* BeautifulBarChartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeautifulBarChartPresenter.swift; sourceTree = "<group>"; };
 		BF84AAA127B912B000EFBA16 /* BasicBarChartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarChartPresenter.swift; sourceTree = "<group>"; };
 		BF84AAA227B912B000EFBA16 /* BasicBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarChart.swift; sourceTree = "<group>"; };
 		BF84AAA327B912B000EFBA16 /* BasicBarEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBarEntry.swift; sourceTree = "<group>"; };
@@ -94,16 +88,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BF84AA9C27B912B000EFBA16 /* BeautifulBarChart */ = {
-			isa = PBXGroup;
-			children = (
-				BF84AA9D27B912B000EFBA16 /* BeautifulBarEntry.swift */,
-				BF84AA9E27B912B000EFBA16 /* BeautifulBarChart.swift */,
-				BF84AA9F27B912B000EFBA16 /* BeautifulBarChartPresenter.swift */,
-			);
-			path = BeautifulBarChart;
-			sourceTree = "<group>";
-		};
 		BF84AAA027B912B000EFBA16 /* BasicBarChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				BF84AAA027B912B000EFBA16 /* BasicBarChart */,
-				BF84AA9C27B912B000EFBA16 /* BeautifulBarChart */,
 				BF84AAA427B912B000EFBA16 /* Shared */,
 			);
 			path = BarChart;
@@ -344,8 +327,6 @@
 				BF84AAC027B96EFD00EFBA16 /* AQIView.swift in Sources */,
 				BFBC1A7F27B7BA9A00315ECC /* CitiesAQIController.swift in Sources */,
 				BFBC1A8327B7BC1200315ECC /* CityAQICell.swift in Sources */,
-				BF84AAAC27B912B000EFBA16 /* BeautifulBarChartPresenter.swift in Sources */,
-				BF84AAAA27B912B000EFBA16 /* BeautifulBarEntry.swift in Sources */,
 				BF84AAC327B989CF00EFBA16 /* DetailAQIViewModel.swift in Sources */,
 				BFBC1A7B27B7A4EC00315ECC /* WebSocket.swift in Sources */,
 				BF1B237827B82AAD008AB4B7 /* UIColor+Extension.swift in Sources */,
@@ -361,7 +342,6 @@
 				BF84AAB027B912B000EFBA16 /* CustomSegments.swift in Sources */,
 				BF1B237A27B83690008AB4B7 /* String+Extension.swift in Sources */,
 				BF84AAB327B912B000EFBA16 /* ArrayExtension.swift in Sources */,
-				BF84AAAB27B912B000EFBA16 /* BeautifulBarChart.swift in Sources */,
 				BF84AAB127B912B000EFBA16 /* CALayerExtension.swift in Sources */,
 				BF84AAAD27B912B000EFBA16 /* BasicBarChartPresenter.swift in Sources */,
 				BFBC1A8A27B7C91600315ECC /* CitiesAQIViewModel.swift in Sources */,
