@@ -28,6 +28,9 @@ final class DetailCityAQIController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func timerSelected(_ sender: UISegmentedControl) {
+        viewModel.getUpdate(inSeconds: [0 : 5.0, 1 : 30.0, 2 : 60.0][sender.selectedSegmentIndex], fromUI: true)
+    }
 }
 
 extension DetailCityAQIController: DetailAQIViewModelDelegate {

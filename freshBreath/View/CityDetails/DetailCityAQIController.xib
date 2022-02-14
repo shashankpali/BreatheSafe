@@ -31,8 +31,19 @@
                     </connections>
                 </button>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyW-gS-dKI">
-                    <rect key="frame" x="0.0" y="469" width="414" height="443"/>
+                    <rect key="frame" x="0.0" y="420" width="414" height="492"/>
                     <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="s40-bq-9o9">
+                            <rect key="frame" x="114.5" y="411" width="185" height="32"/>
+                            <segments>
+                                <segment title="5 sec"/>
+                                <segment title="30 sec"/>
+                                <segment title="60 sec"/>
+                            </segments>
+                            <connections>
+                                <action selector="timerSelected:" destination="-1" eventType="valueChanged" id="OKQ-ng-uzz"/>
+                            </connections>
+                        </segmentedControl>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgk-RW-b6R" customClass="AQIView" customModule="freshBreath" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,7 +70,9 @@
                         <constraint firstItem="Rgk-RW-b6R" firstAttribute="leading" secondItem="CyW-gS-dKI" secondAttribute="leading" id="73l-eu-rEQ"/>
                         <constraint firstAttribute="trailing" secondItem="Rgk-RW-b6R" secondAttribute="trailing" id="7Dh-5G-mJI"/>
                         <constraint firstItem="lAX-dm-Ifn" firstAttribute="leading" secondItem="CyW-gS-dKI" secondAttribute="leading" id="ITf-BK-zNe"/>
-                        <constraint firstAttribute="bottom" secondItem="lAX-dm-Ifn" secondAttribute="bottom" constant="32" id="rps-eg-x4d"/>
+                        <constraint firstItem="s40-bq-9o9" firstAttribute="top" secondItem="lAX-dm-Ifn" secondAttribute="bottom" id="Qpg-TZ-1Yo"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="s40-bq-9o9" secondAttribute="bottom" constant="8" id="p3H-O8-BGr"/>
+                        <constraint firstItem="s40-bq-9o9" firstAttribute="centerX" secondItem="CyW-gS-dKI" secondAttribute="centerX" id="qBB-K9-xpb"/>
                         <constraint firstItem="lAX-dm-Ifn" firstAttribute="top" secondItem="Rgk-RW-b6R" secondAttribute="bottom" id="szE-QV-Gkc"/>
                         <constraint firstAttribute="trailing" secondItem="lAX-dm-Ifn" secondAttribute="trailing" id="z8b-KK-t5Q"/>
                     </constraints>
