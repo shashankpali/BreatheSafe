@@ -59,4 +59,8 @@ Specific module of `BarChart` by [Minh Nguyen](https://github.com/nhatminh12369/
 - WebSocket 
     - Create a single instance of `WebSocket` so when app *sceneDidEnterBackground* get called disconnecting the scoket and re-connecting it at callback *sceneWillEnterForeground*
 
+## Future Scope
+- `CoreData` implementation to view data offline 
+- Offer more use case by integrating **Weather** information
+    
 ## I hope you will like the Project..!!!
