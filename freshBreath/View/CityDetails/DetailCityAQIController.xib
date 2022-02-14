@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailCityAQIController" customModule="freshBreath" customModuleProvider="target">
+            <connections>
+                <outlet property="chartView" destination="lAX-dm-Ifn" id="JhN-WU-U86"/>
+                <outlet property="cityView" destination="Rgk-RW-b6R" id="CXg-le-hXz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qN-sE-M2c">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="hideTapped:" destination="-1" eventType="touchUpInside" id="XPC-EE-WCM"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyW-gS-dKI">
+                    <rect key="frame" x="0.0" y="404" width="414" height="508"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="s40-bq-9o9">
+                            <rect key="frame" x="114.5" y="411" width="185" height="32"/>
+                            <segments>
+                                <segment title="5 sec"/>
+                                <segment title="30 sec"/>
+                                <segment title="60 sec"/>
+                            </segments>
+                            <connections>
+                                <action selector="timerSelected:" destination="-1" eventType="valueChanged" id="OKQ-ng-uzz"/>
+                            </connections>
+                        </segmentedControl>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgk-RW-b6R" customClass="AQIView" customModule="freshBreath" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+                            <color key="backgroundColor" name="childBackColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="111" id="jwz-J6-Biu"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAX-dm-Ifn" customClass="BasicBarChart" customModule="freshBreath" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="111" width="414" height="300"/>
+                            <color key="backgroundColor" name="childBackColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="300" id="xeS-gS-8Hr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="childBackColor"/>
+                    <constraints>
+                        <constraint firstItem="Rgk-RW-b6R" firstAttribute="top" secondItem="CyW-gS-dKI" secondAttribute="top" id="6yG-wd-i7t"/>
+                        <constraint firstItem="Rgk-RW-b6R" firstAttribute="leading" secondItem="CyW-gS-dKI" secondAttribute="leading" id="73l-eu-rEQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Rgk-RW-b6R" secondAttribute="trailing" id="7Dh-5G-mJI"/>
+                        <constraint firstItem="lAX-dm-Ifn" firstAttribute="leading" secondItem="CyW-gS-dKI" secondAttribute="leading" id="ITf-BK-zNe"/>
+                        <constraint firstItem="s40-bq-9o9" firstAttribute="top" secondItem="lAX-dm-Ifn" secondAttribute="bottom" id="Qpg-TZ-1Yo"/>
+                        <constraint firstItem="s40-bq-9o9" firstAttribute="centerX" secondItem="CyW-gS-dKI" secondAttribute="centerX" id="qBB-K9-xpb"/>
+                        <constraint firstItem="lAX-dm-Ifn" firstAttribute="top" secondItem="Rgk-RW-b6R" secondAttribute="bottom" id="szE-QV-Gkc"/>
+                        <constraint firstAttribute="trailing" secondItem="lAX-dm-Ifn" secondAttribute="trailing" id="z8b-KK-t5Q"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="overlayColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CyW-gS-dKI" secondAttribute="trailing" id="5g3-hA-pqS"/>
+                <constraint firstItem="7qN-sE-M2c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="C4E-fT-fyO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7qN-sE-M2c" secondAttribute="bottom" id="Gaa-2L-pJ3"/>
+                <constraint firstItem="CyW-gS-dKI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="O14-Mg-lai"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7qN-sE-M2c" secondAttribute="trailing" id="bXU-sB-FFf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s40-bq-9o9" secondAttribute="bottom" constant="16" id="cUq-fw-OgN"/>
+                <constraint firstAttribute="bottom" secondItem="CyW-gS-dKI" secondAttribute="bottom" constant="-16" id="ocL-bb-j2n"/>
+                <constraint firstItem="7qN-sE-M2c" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wJn-v0-LX1"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="55.580357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="childBackColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="overlayColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
