@@ -13,7 +13,6 @@ final class DetailCityAQIController: UIViewController {
     @IBOutlet weak var chartView: BasicBarChart!
     //
     var cityModel: CityModel?
-    var timer = Timer()
     let viewModel = DetailAQIViewModel()
     
     override func viewDidLoad() {
@@ -24,7 +23,6 @@ final class DetailCityAQIController: UIViewController {
     }
     
     @IBAction func hideTapped(_ sender: UIButton) {
-        timer.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
     
