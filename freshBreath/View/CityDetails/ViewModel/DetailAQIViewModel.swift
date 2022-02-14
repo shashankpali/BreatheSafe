@@ -13,30 +13,34 @@ protocol DetailAQIViewModelDelegate {
 
 final class DetailAQIViewModel {
     
-    var cityModel: CityModel?
-    var timer = Timer()
     var delegate : DetailAQIViewModelDelegate?
     
+    private var cityModel: CityModel?
+    private var timer = Timer()
+    private let ratio : Float = 1.4
+    
     func build(forModel: CityModel?) {
-        
         cityModel = forModel
-        
         guard cityModel != nil else {return}
-        var time = 0
-        var arr = loadHistory()
+        getUpdate(inSeconds: 5.0)
+    }
+    
+    func getUpdate(inSeconds: Double) {
+        timer.invalidate()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) {[unowned self] (timer) in
+        var arr = loadHistory()
+        timer = Timer.scheduledTimer(withTimeInterval: inSeconds, repeats: true) {[unowned self] (timer) in
             guard let records = cityModel?.records else {return}
             
             let max = records.max{$0.aqi > $1.aqi}!
             
             let rec = records.last!
-            let val = Float(rec.aqi / max.aqi) / 1.5
+            let val = Float(rec.aqi / max.aqi) / ratio
             arr += [DataEntry(color: UIColor.forStatus(rec.status), height: val, textValue: rec.aqiString, title: String.asMinAndSec(Date()))]
-            time += 3
             
             delegate?.didUpdatedChart(model: cityModel!, data: arr)
         }
+        
         timer.fire()
     }
     
@@ -45,7 +49,7 @@ final class DetailAQIViewModel {
         var arr = [DataEntry]()
         let max = records.max{$0.aqi > $1.aqi}!
         for rec in records {
-            let val = Float(rec.aqi / max.aqi) / 1.5
+            let val = Float(rec.aqi / max.aqi) / ratio
             arr += [DataEntry(color: UIColor.forStatus(rec.status), height: val, textValue: rec.aqiString, title: String.asMinAndSec(rec.time))]
         }
         return arr

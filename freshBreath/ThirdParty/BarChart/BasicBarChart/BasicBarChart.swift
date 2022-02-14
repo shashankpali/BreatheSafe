@@ -19,7 +19,7 @@ class BasicBarChart: UIView {
     private var animated = false
     
     /// Responsible for compute all positions and frames of all elements represent on the bar chart
-    private let presenter = BasicBarChartPresenter(barWidth: 40, space: 20)
+    private let presenter = BasicBarChartPresenter(barWidth: 40, space: 30)
     
     /// An array of bar entries. Each BasicBarEntry contain information about line segments, curved line segments, positions and frames of all elements on a bar.
     private var barEntries: [BasicBarEntry] = [] {
@@ -37,11 +37,20 @@ class BasicBarChart: UIView {
         }
     }
     
-    func updateDataEntries(dataEntries: [DataEntry], animated: Bool) {
+    func updateDataEntries(dataEntries: [DataEntry], animated: Bool, scrollToNew: Bool) {
         self.animated = animated
         self.presenter.dataEntries = dataEntries
         self.barEntries = self.presenter.computeBarEntries(viewHeight: self.frame.height)
+        guard scrollToNew else {return}
+        scrollToRight()
     }
+    
+    private func scrollToRight() {
+        let bottomOffset = CGPoint(x: scrollView.contentSize.width - scrollView.bounds.size.width + scrollView.contentInset.right, y: 0)
+            if(bottomOffset.x > 0) {
+                scrollView.setContentOffset(bottomOffset, animated: true)
+            }
+        }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +75,7 @@ class BasicBarChart: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.updateDataEntries(dataEntries: presenter.dataEntries, animated: false)
+        self.updateDataEntries(dataEntries: presenter.dataEntries, animated: false, scrollToNew: false)
     }
     
     private func showEntry(index: Int, entry: BasicBarEntry, animated: Bool, oldEntry: BasicBarEntry?) {

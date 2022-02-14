@@ -33,6 +33,6 @@ final class DetailCityAQIController: UIViewController {
 extension DetailCityAQIController: DetailAQIViewModelDelegate {
     func didUpdatedChart(model: CityModel, data: [DataEntry]) {
         cityView.prepare(forModel: model)
-        chartView.updateDataEntries(dataEntries: data, animated: true)
+        chartView.updateDataEntries(dataEntries: data, animated: true, scrollToNew: true)
     }
 }
